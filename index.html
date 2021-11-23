@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Temperature/Humidity Application Management Zealand</title>
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <button class="btn btn-warning" v-on:click="cleanList">Clean the list</button>
+
+
+        <!-- GET ALL With Sort-->
+   
+        <button id="getAllButton" v-on:click="getAllTemperatures" class="btn btn-primary">Get all Temperatures</button>
+        <button id="sortByTemperature" v-on:click="sortTable" class="btn btn-primary">Sort by height</button>
+        <br />
+
+            <table v-if="temperatures.length" class="table table-striped">
+            <tr v-for="temp in temperatures">
+                <!-- <td> Id: {{ath.id}} </td> -->
+                <td> Temperature: {{temp.temperature}} </td>
+                <td> Humidity: {{temp.humidity}} </td>
+                <td> RoomId: {{temp.roomId}} </td>
+            </tr>
+        </table>
+        <div v-else>No Temperature found!</div> 
+        <br />
+
+
+
+        <script src="js/index.js"></script>
+</body>
+</html>
