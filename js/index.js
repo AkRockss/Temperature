@@ -1,20 +1,11 @@
-const baseUrl =""
+const baseUrl = "https://temperaturerestget.azurewebsites.net/Sensor"
 
 
 Vue.createApp({
     data() {
         return {
-            temperatures: [],
-            error: null,
-            roomId: "",
-            singleTemperature: [],
-            temperatureToGetBy: null,
-            deleteId: 0,
-            deleteMessage: "",
-            addData: { temperature: "", humidity: "", roomId: ""},
-            addMessage: "",
-            updateData: { id: 0, temperature: "", humidity: "", roomId: ""},
-            updateMessage: "",
+            temperatures: []
+
         }
     },
 
@@ -27,7 +18,7 @@ Vue.createApp({
 
     methods: {
 
-        getAllAthletes() {
+        getAllTemperatures() {
             this.helperGetAndShow(baseUrl)
         },
     

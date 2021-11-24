@@ -15,13 +15,10 @@
 
     <div id="app">
 
-        <button class="btn btn-warning" v-on:click="cleanList">Clean the list</button>
-
-
         <!-- GET ALL With Sort-->
    
         <button id="getAllButton" v-on:click="getAllTemperatures" class="btn btn-primary">Get all Temperatures</button>
-        <button id="sortByTemperature" v-on:click="sortTable" class="btn btn-primary">Sort by height</button>
+        <button id="sortByTemperature" v-on:click="sortTable" class="btn btn-primary">Sort by temperature</button>
         <br />
 
             <table v-if="temperatures.length" class="table table-striped">
