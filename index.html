@@ -18,7 +18,7 @@
         <!-- GET ALL With Sort-->
    
         <button id="getAllButton" v-on:click="getAllTemperatures" class="btn btn-primary">Get all Temperatures</button>
-        <button id="sortByTemperature" v-on:click="sortTable" class="btn btn-primary">Sort by temperature</button>
+        
         <br />
 
             <table v-if="temperatures.length" class="table table-striped">
@@ -27,12 +27,32 @@
                 <td> Temperature: {{temp.temperature}} </td>
                 <td> Humidity: {{temp.humidity}} </td>
                 <td> RoomId: {{temp.roomId}} </td>
+                <td> Date: {{temp.date}} </td>
             </tr>
         </table>
         <div v-else>No Temperature found!</div> 
         <br />
 
+   
+          <!-- THIRDPARTY GET ALL With Sort-->
 
+        <button id="getAllButton" v-on:click="getAllWeathers" class="btn btn-primary">Get all Weathers</button>
+        <br />
+
+            <table v-if="dataseries.length" class="table table-striped">
+            <tr v-for="data in dataseries">
+                <td> Temperature: {{data.temp2m}} </td>
+                <td> Weather: {{data.weather}} </td>
+                <td> Date: {{data.date}}</td>
+                <td> Wind: {{data.wind10m_max}}</td>
+        
+                
+            </tr>
+        </table>
+        <div v-else>No weathers found!</div> 
+        <br />
+
+  
 
         <script src="js/index.js"></script>
 </body>
